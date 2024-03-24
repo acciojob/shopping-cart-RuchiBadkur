@@ -7,7 +7,9 @@ document.getElementById('add').addEventListener('click', function() {
         var newRow = document.createElement('tr');
         var itemNameCell = document.createElement('td');
         itemNameCell.textContent = itemName;
+		itemNameCell.id = "item";
         var itemPriceCell = document.createElement('td');
+		itemPriceCell.id="price";
         itemPriceCell.textContent = itemPrice.toFixed(2);
         newRow.appendChild(itemNameCell);
         newRow.appendChild(itemPriceCell);
@@ -15,7 +17,7 @@ document.getElementById('add').addEventListener('click', function() {
 
         var total = parseFloat(document.getElementById('grand-total').textContent);
         total += itemPrice;
-        document.getElementById('grand-total').textContent = total.toFixed(2);
+        document.getElementById('total').textContent = total.toFixed(2);
 
         document.getElementById('item-name-input').value = '';
         document.getElementById('item-price-input').value = '';
